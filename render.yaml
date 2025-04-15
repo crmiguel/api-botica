@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: api-botica
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    plan: free
+    region: oregon
+    envVars:
+      - key: SUPABASE_URL
+        value: https://<TU_URL>.supabase.co
+      - key: SUPABASE_KEY
+        value: <TU_API_KEY>
